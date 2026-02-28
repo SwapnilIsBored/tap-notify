@@ -1,0 +1,21 @@
+{
+  "name": "tap-notify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwapnilIsBored/tap-notify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SwapnilIsBored/tap-notify/issues"
+  },
+  "homepage": "https://github.com/SwapnilIsBored/tap-notify#readme"
+}
