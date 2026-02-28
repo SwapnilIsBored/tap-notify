@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     }
     
     try {
-        // Send to BOTH people
+        // Send to BOTH people with inline buttons
         const chatIds = [YOUR_CHAT_ID, FRIEND_CHAT_ID];
         
         for (const chatId of chatIds) {
@@ -24,8 +24,16 @@ export default async function handler(req, res) {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         chat_id: chatId,
-                        text: `🔔 Someone wants to chat!\n⏰ ${new Date().toLocaleString()}`,
-                        parse_mode: 'HTML'
+                        text: `🔔 Someone wants to chat!\n⏰ ${new Date().toLocaleString()}\n\nAre you available?`,
+                        parse_mode: 'HTML',
+                        reply_markup: {
+                            inline_keyboard: [
+                                [
+                                    { text: '✅ I am here!', callback_data: `available_${chatId}` },
+                                    { text: '🚫 I am busy', callback_data: `busy_${chatId}` }
+                                ]
+                            ]
+                        }
                     })
                 }
             );
